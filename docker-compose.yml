@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  php:
+    build: ./php
+    container_name: php_app
+    volumes:
+      - ./php:/var/www/html
+    depends_on:
+      - mysql
+    networks:
+      - mynetwork
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: coaching
+      MYSQL_USER: sea
+      MYSQL_PASSWORD: Pr0j3cts3@
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/script.sql:/docker-entrypoint-initdb.d/script.sql
+    networks:
+      - mynetwork
+
+  nginx:
+    build: ./nginx
+    container_name: nginx_proxy
+    volumes:
+      - ./php:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
+
