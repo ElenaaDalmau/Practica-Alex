@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $servername = "localhost";
+    $servername = "mysql";
     $username = "sea";
     $database = "coaching";
     $password = "Pr0j3cts3@";
@@ -92,9 +92,9 @@
         <div id="fondo_listado">
             <?php
             $sql = "SELECT E.Nombre_Especialista, E.Apellido_Especialista, ES.Especialidad_Especialista, E.Cuota_Especialista, E.DNI_Especialista
-                    FROM ESPECIALISTAS E
-                    JOIN ESPECIALISTA_ESPECIALIDAD EE ON E.ID_Especialista = EE.ID_Especialista_EspeEspe
-                    JOIN ESPECIALIDAD ES ON EE.ID_Especialidad_EspeEspe = ES.ID_Especialidad";
+                    FROM especialistas E
+                    JOIN especialistas_especialidades EE ON E.ID_Especialista = EE.ID_Especialista_EspeEspe
+                    JOIN especialidad ES ON EE.ID_Especialidad_EspeEspe = ES.ID_Especialidad";
 
             $result = mysqli_query($conn, $sql);
 

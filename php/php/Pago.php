@@ -1,3 +1,6 @@
+<?php
+            session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -14,9 +17,7 @@
     <body class="Fondo_pago">
         <!-- CONEXION -->
         <?php
-            session_start();
-
-            $servername = "localhost";
+            $servername = "mysql";
             $username = "sea";
             $database = "coaching";
             $password = "Pr0j3cts3@";

@@ -1,8 +1,7 @@
-<!-- CONEXION -->
 <?php
     session_start();
 
-    $servername = "localhost";
+    $servername = "mysql";
     $username = "sea";
     $database = "coaching";
     $password = "Pr0j3cts3@";
@@ -28,7 +27,7 @@
     $DNI_Cliente = $_SESSION['DNI_Cliente'];
 
     // Consulta SQL para obtener los datos del cliente
-    $sql_cliente = "SELECT ID_Cliente, Nombre_Cliente, Apellido_Cliente FROM CLIENTES WHERE DNI_Cliente = '$DNI_Cliente'";
+    $sql_cliente = "SELECT ID_Cliente, Nombre_Cliente, Apellido_Cliente FROM clientes WHERE DNI_Cliente = '$DNI_Cliente'";
     $resultado_cliente = mysqli_query($conn, $sql_cliente);
 
     // Validar el resultado de la consulta

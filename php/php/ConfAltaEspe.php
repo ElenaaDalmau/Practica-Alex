@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    $servername = "localhost";
+    $servername = "mysql";
     $username = "sea";
     $database = "coaching";
     $password = "Pr0j3cts3@";

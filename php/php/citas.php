@@ -1,7 +1,7 @@
 <?php
 
 // Evitar la exposición de credenciales en el código
-$servername = getenv('DB_SERVER') ?: 'localhost';
+$servername = getenv('DB_SERVER') ?: 'mysql';
 $username = getenv('DB_USER') ?: 'Cache3815';
 $password = getenv('DB_PASS') ?: 'z1fVrI&ZVfyonsZ';
 $dbname = getenv('DB_NAME') ?: 'COACHING';

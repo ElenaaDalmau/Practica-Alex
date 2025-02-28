@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $servername = "localhost";
+    $servername = "mysql";
     $username = "sea";
     $database = "coaching";
     $password = "Pr0j3cts3@";
@@ -93,7 +93,7 @@
             }
 
             // Construir y ejecutar la consulta SQL
-            $sql = "SELECT * FROM CLIENTES WHERE DNI_Cliente = '" . $_SESSION['DNI_Cliente'] . "'";
+            $sql = "SELECT * FROM clientes WHERE DNI_Cliente = '" . $_SESSION['DNI_Cliente'] . "'";
             $result = mysqli_query($conn, $sql);
 
             // Validar el resultado de la consulta

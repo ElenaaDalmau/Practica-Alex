@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$servername = "localhost";
+$servername = "mysql";
 $username = "hola";
 $password = "12345";
 $dbname = "coaching";

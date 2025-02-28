@@ -17,7 +17,6 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: coaching
       MYSQL_USER: sea
       MYSQL_PASSWORD: Pr0j3cts3@
     volumes:
